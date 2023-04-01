@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <MuiThemes>
-          <RoutesManager />
+        <RoutesManager />
       </MuiThemes>
     </BrowserRouter>
   </React.StrictMode>

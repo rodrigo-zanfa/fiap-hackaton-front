@@ -1,18 +1,14 @@
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Card, CardMedia, CardContent, Typography } from "@mui/material";
+
 import { IMovie } from "../Interfaces/IMovies";
 import Colors from "../Utils/Common/Colors";
 import "./CardStyles.css"
 
 type IProps = {
-  movie: IMovie;  
+  movie: IMovie;
 };
 
-const CardView = ({movie} : IProps) => {
+const CardView = ({ movie }: IProps) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia

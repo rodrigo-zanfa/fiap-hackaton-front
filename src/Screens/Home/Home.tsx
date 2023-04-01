@@ -1,19 +1,13 @@
-import {
-  Container,
-  Grid,
-  Button,
-  TextField,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Container, Grid, Button, TextField, Typography, Box } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 import { useState, useEffect } from "react";
+import { Else, If, Then } from "react-if";
+
 import CardView from "../../Components/CardView";
 import { IMovie } from "../../Interfaces/IMovies";
 import useAPI from "../../Services/APIs/Common/useAPI";
 import Movies from "../../Services/APIs/Movies/Movies";
 import Colors from "../../Utils/Common/Colors";
-import CircularProgress from "@mui/material/CircularProgress";
-import { Else, If, Then } from "react-if";
 import "./HomeStyles.css";
 
 const Home = () => {
@@ -22,15 +16,12 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const getPersonAPI = useAPI(Movies.getMovies);
 
-  useEffect(() => {
-    getData()
-  }, []);
-
+  useEffect(() => { getData() }, []);
   const getData = () => {
     setIsLoading(true);
     getPersonAPI
       .requestPromise(searchText)
-      .then((info: IMovie[]) => {        
+      .then((info: IMovie[]) => {
         console.log(info);
         setMovies(info);
         setIsLoading(false);
@@ -40,11 +31,7 @@ const Home = () => {
       });
   };
 
-  const onChangeSearch = (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-  ) => {
-    setSearchText(event.target.value);
-  };
+  const onChangeSearch = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => { setSearchText(event.target.value); };
 
 
   let arrayInfo: JSX.Element[] = [];

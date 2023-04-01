@@ -1,16 +1,17 @@
-.header{
+.header {
     height: 40px;
     margin-top: 20px !important;
 }
+
 .buttonsDiv {
     text-align: right;
 }
 
-.divCards{
+.divCards {
     padding-top: 40px !important;
     margin-bottom: 50px !important;
 }
 
-.progress{
+.progress {
     text-align: center;
 }
