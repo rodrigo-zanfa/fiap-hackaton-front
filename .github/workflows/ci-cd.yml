@@ -39,7 +39,7 @@ jobs:
       - name: Get artifact
         uses: actions/download-artifact@v3
         with:
-          name: react-github-actions-build
+          name: fiap-hackaton-front
 
       # Set the credentials from repository settings/secrets
       - name: Configure AWS credentials
@@ -52,4 +52,4 @@ jobs:
       # Copy the files from build folder to the S3 bucket
       - name: Deploy to S3
         run: aws s3 sync . s3://react-github-actions --acl public-read
-        working-directory: react-github-actions-build  
+        working-directory: fiap-hackaton-front  
